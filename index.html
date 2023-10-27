@@ -214,12 +214,17 @@
 		}
 
 		.contact {
+			--contact-spacing: 1.5rem;
 			text-align: left;
 		}
 
-		.contact p {
+		.contact > * {
 			font-weight: 300;
 			font-size: 1em;
+		}
+
+		.contact > *:not(:first-child) {
+			margin-top: 1em;
 		}
 
 		.seo-only {
@@ -261,6 +266,29 @@
 				font-size: 1.25rem;
 			}
 
+			.contact-email,
+			.contact-address {
+				margin: 0px;
+				position: fixed;
+				bottom: var(--contact-spacing);
+			}
+
+			.contact-email {
+				left: var(--contact-spacing);
+			}
+
+			.contact-address {
+				right: var(--contact-spacing);
+			}
+
+			.contact-address {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
 		}
 
 	</style>
@@ -277,8 +305,8 @@
 		<a class="btn btn-secondary" href="https://calendly.com/alex-gnw">Audit my LinkedIn</a>
 	</div>
 	<div class="contact">
-		<p><a href="mailto:alex@salesdesignlabs.com" target="_blank">alex@salesdesignlabs.com</a></p>
-		<p>1927 N Milwaukee<br>Chicago, IL 60647</p>
+		<div class="contact-email"><a href="mailto:alex@salesdesignlabs.com" target="_blank">alex@salesdesignlabs.com</a></div>
+		<div class="contact-address"><div>1927 N Milwaukee Ave.</div><div>Chicago, IL 60647</div></div>
 	</div>
 </main>
 
